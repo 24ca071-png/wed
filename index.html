@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise Login</title>
+
+  <style>
+    * {
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background: url("kamini akka.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  text-align: right;
+}
+
+/* 🎉 Mobile View Background */
+@media only screen and (max-width: 768px) {
+  body {
+    background: url("kamini akka.jpeg") no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+    .container {
+      width:90%;
+      max-width:400px;
+      background:pink;
+      padding:35px;
+      border-radius:40px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+      animation:fadeIn 1.5s ease;
+    }
+
+    h1 {
+      color:#0A0401;
+      margin-bottom:40px;
+    }
+
+    input {
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border:1px solid #ccc;
+      border-radius:10px;
+      font-size:16px;
+    }
+
+    button {
+      width:100%;
+      padding:12px;
+      margin-top:15px;
+      border:none;
+      border-radius:25px;
+      background:#F02A11;
+     
+    }
+
+    {  color:Blue;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover {
+      background:#0A0401;
+      transform:scale(1.03);
+    }
+
+    .hidden {
+      display:none;
+    }
+
+    .heart {
+      font-size:50px;
+      animation:beat 1s infinite;
+      margin-top:20px;
+    }
+
+    p {
+      color:#1494D9;
+      font-size:18px;
+      line-height:1.6;
+      margin-top:15px;
+    }
+
+    @keyframes beat {
+      0%{transform:scale(1);}
+      50%{transform:scale(1.2);}
+      100%{transform:scale(1);}
+    }
+
+    @keyframes fadeIn {
+      from{opacity:0;transform:translateY(30px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    
+    img {
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      border:5px solid white;
+      box-shadow:0px 0px 20px black;
+      margin-top:20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Login Page -->
+  <div class="container" id="loginPage">
+    <h1>🔐 Login</h1>
+    <input type="text" id="username" placeholder="Enter Name">
+    <input type="password" id="password" placeholder="Enter DOB (DD/MM/YYYY)">
+    <button onclick="login()"> Login ❤️</button>
+  </div>
+
+  <!-- Birthday Surprise Page -->
+  <div class="container hidden" id="birthdayPage">
+    <h1><b>🎉 Happy Birthday My Dear Devil Sister🎂</b></h1>
+    <h2>My Happyness❤️</h2>
+    <p>
+      You are the most beautiful part of my life 💖<br><br>
+      Thank you for bringing happiness and love into my world.<br><br>
+      I wish your birthday is filled with joy, smiles, and endless love.<br><br>
+      <b>Happy Birthday My Princess 👑</b>
+    </p>
+    <div class="heart">❤️</div>
+    
+    <button onclick="showMessage()"> You Want Surprise Click On It:🎁</button>
+  </div>
+
+  <script>
+    const correctName = "Kamini";
+    const correctDOB = "13/10/2005";
+
+    function login(){
+      let username = document.getElementById("username").value;
+      let password = document.getElementById("password").value;
+
+      if(username === correctName && password === correctDOB){
+        document.getElementById("loginPage").classList.add("hidden");
+        document.getElementById("birthdayPage").classList.remove("hidden");
+      } else {
+        alert("Wrong Name or DOB ❌");
+      }
+    }
+
+    function showMessage(){
+      alert("I Heart You Forever ❤️ Happy Birthday My Loveable Akka 🎂");
+    }
+  </script>
+
+</body>
+</html>
